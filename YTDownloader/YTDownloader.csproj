@@ -1,20 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-	<Authors>Roman Binyukov</Authors>
-	<Copyright>Copyright © 2023 Roman Binyukov</Copyright>
-	<PackageLicenseExpression>MIT</PackageLicenseExpression>
-	
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+	    <Authors>Roman Binyukov | Quikler</Authors>
+	    <Copyright>Copyright © 2023 Roman Binyukov | Quikler</Copyright>
+	    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/Quikler/YTDownloader</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Quikler/YTDownloader</RepositoryUrl>
+		<PackageTags>
+			Youtube YoutubeDownloader YoutubeMediaDownloader
+			YotubeDownload YT YTDownloader YTMediaDownloader
+		</PackageTags>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="13.5.0" />
-    <PackageReference Include="NReco.VideoConverter" Version="1.2.1" />
-    <PackageReference Include="TagLibSharp" Version="2.3.0" />
-    <PackageReference Include="YoutubeExplode" Version="6.3.9" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="13.5.0" />
+        <PackageReference Include="NReco.VideoConverter" Version="1.2.1" />
+        <PackageReference Include="TagLibSharp" Version="2.3.0" />
+        <PackageReference Include="YoutubeExplode" Version="6.3.9" />
+    </ItemGroup>
 
 </Project>
