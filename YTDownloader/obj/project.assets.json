@@ -1,0 +1,408 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "AngleSharp/1.0.7": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encoding.CodePages": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/AngleSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/AngleSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Magick.NET-Q16-AnyCPU/13.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Magick.NET.Core": "13.5.0"
+        },
+        "compile": {
+          "lib/netstandard21/Magick.NET-Q16-AnyCPU.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard21/Magick.NET-Q16-AnyCPU.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/netstandard20/Magick.NET-Q16-AnyCPU.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/Magick.Native-Q16-arm64.dll.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-musl-x64/native/Magick.Native-Q16-x64.dll.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-x64/native/Magick.Native-Q16-x64.dll.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-arm64/native/Magick.Native-Q16-arm64.dll.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/Magick.Native-Q16-x64.dll.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-arm64/native/Magick.Native-Q16-arm64.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/Magick.Native-Q16-x64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/Magick.Native-Q16-x86.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Magick.NET.Core/13.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard21/Magick.NET.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard21/Magick.NET.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NReco.VideoConverter/1.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NReco.VideoConverter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/NReco.VideoConverter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Text.Encoding.CodePages/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Text.Encoding.CodePages.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Text.Encoding.CodePages.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/System.Text.Encoding.CodePages.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "TagLibSharp/2.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/TagLibSharp.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/TagLibSharp.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "YoutubeExplode/6.3.9": {
+        "type": "package",
+        "dependencies": {
+          "AngleSharp": "1.0.7"
+        },
+        "compile": {
+          "lib/net5.0/YoutubeExplode.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/YoutubeExplode.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AngleSharp/1.0.7": {
+      "sha512": "jZg7lDcrXRiIC8VBluuGKOCMR9mc4CIRX5vpQJ8fcgafs6T6plOzKHhAn3lJEwXorrltd9p1WtRxxhFpRBACbg==",
+      "type": "package",
+      "path": "anglesharp/1.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "anglesharp.1.0.7.nupkg.sha512",
+        "anglesharp.nuspec",
+        "lib/net461/AngleSharp.dll",
+        "lib/net461/AngleSharp.xml",
+        "lib/net472/AngleSharp.dll",
+        "lib/net472/AngleSharp.xml",
+        "lib/net6.0/AngleSharp.dll",
+        "lib/net6.0/AngleSharp.xml",
+        "lib/net7.0/AngleSharp.dll",
+        "lib/net7.0/AngleSharp.xml",
+        "lib/net8.0/AngleSharp.dll",
+        "lib/net8.0/AngleSharp.xml",
+        "lib/netstandard2.0/AngleSharp.dll",
+        "lib/netstandard2.0/AngleSharp.xml",
+        "logo.png"
+      ]
+    },
+    "Magick.NET-Q16-AnyCPU/13.5.0": {
+      "sha512": "Kl3uDaaQkK9LVM9CUexnerlTOGFxA0CQHDU9be960W2VZVD45KtE5Yvtq3Mg0rUq7LlwXGCNr1FxEw/hhS2D/Q==",
+      "type": "package",
+      "path": "magick.net-q16-anycpu/13.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Magick.NET.icon.png",
+        "Notice.linux-musl.txt",
+        "Notice.linux.txt",
+        "Notice.osx.txt",
+        "Notice.win.txt",
+        "build/netstandard20/Magick.NET-Q16-AnyCPU.targets",
+        "docs/Readme.md",
+        "lib/netstandard20/Magick.NET-Q16-AnyCPU.dll",
+        "lib/netstandard20/Magick.NET-Q16-AnyCPU.xml",
+        "lib/netstandard21/Magick.NET-Q16-AnyCPU.dll",
+        "lib/netstandard21/Magick.NET-Q16-AnyCPU.xml",
+        "magick.net-q16-anycpu.13.5.0.nupkg.sha512",
+        "magick.net-q16-anycpu.nuspec",
+        "runtimes/linux-arm64/native/Magick.Native-Q16-arm64.dll.so",
+        "runtimes/linux-musl-x64/native/Magick.Native-Q16-x64.dll.so",
+        "runtimes/linux-x64/native/Magick.Native-Q16-x64.dll.so",
+        "runtimes/osx-arm64/native/Magick.Native-Q16-arm64.dll.dylib",
+        "runtimes/osx-x64/native/Magick.Native-Q16-x64.dll.dylib",
+        "runtimes/win-arm64/native/Magick.Native-Q16-arm64.dll",
+        "runtimes/win-x64/native/Magick.Native-Q16-x64.dll",
+        "runtimes/win-x86/native/Magick.Native-Q16-x86.dll"
+      ]
+    },
+    "Magick.NET.Core/13.5.0": {
+      "sha512": "/jKqfhbLvaVqxsV+DkOA5TjfrbO/Q3LdN3OL/xuewdC2EVBN4pTnAekAetn3CsbHOolfvc1xQLxY0MUN3nfwsg==",
+      "type": "package",
+      "path": "magick.net.core/13.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Copyright.txt",
+        "Magick.NET.icon.png",
+        "docs/Readme.md",
+        "lib/netstandard20/Magick.NET.Core.dll",
+        "lib/netstandard20/Magick.NET.Core.xml",
+        "lib/netstandard21/Magick.NET.Core.dll",
+        "lib/netstandard21/Magick.NET.Core.xml",
+        "magick.net.core.13.5.0.nupkg.sha512",
+        "magick.net.core.nuspec"
+      ]
+    },
+    "NReco.VideoConverter/1.2.1": {
+      "sha512": "d/V78hRW6Iqi9+lNrivCWL9qMiiJ8WCrwN1wpEvGq+3mE3uIy7VYhkgHrJBkUzx4RRQKEJ9UvCvVb+0ELIbGWg==",
+      "type": "package",
+      "path": "nreco.videoconverter/1.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/NReco.VideoConverter.dll",
+        "lib/net45/NReco.VideoConverter.xml",
+        "lib/netstandard2.0/NReco.VideoConverter.dll",
+        "lib/netstandard2.0/NReco.VideoConverter.xml",
+        "nreco.videoconverter.1.2.1.nupkg.sha512",
+        "nreco.videoconverter.nuspec"
+      ]
+    },
+    "System.Text.Encoding.CodePages/7.0.0": {
+      "sha512": "LSyCblMpvOe0N3E+8e0skHcrIhgV2huaNcjUUEa8hRtgEAm36aGkRoC8Jxlb6Ra6GSfF29ftduPNywin8XolzQ==",
+      "type": "package",
+      "path": "system.text.encoding.codepages/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Text.Encoding.CodePages.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Text.Encoding.CodePages.targets",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net462/System.Text.Encoding.CodePages.dll",
+        "lib/net462/System.Text.Encoding.CodePages.xml",
+        "lib/net6.0/System.Text.Encoding.CodePages.dll",
+        "lib/net6.0/System.Text.Encoding.CodePages.xml",
+        "lib/net7.0/System.Text.Encoding.CodePages.dll",
+        "lib/net7.0/System.Text.Encoding.CodePages.xml",
+        "lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
+        "lib/netstandard2.0/System.Text.Encoding.CodePages.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.xml",
+        "runtimes/win/lib/net7.0/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/net7.0/System.Text.Encoding.CodePages.xml",
+        "system.text.encoding.codepages.7.0.0.nupkg.sha512",
+        "system.text.encoding.codepages.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "TagLibSharp/2.3.0": {
+      "sha512": "Qo4z6ZjnIfbR3Us1Za5M2vQ97OWZPmODvVmepxZ8XW0UIVLGdO2T63/N3b23kCcyiwuIe0TQvMEQG8wUCCD1mA==",
+      "type": "package",
+      "path": "taglibsharp/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/TagLibSharp.dll",
+        "lib/net462/TagLibSharp.pdb",
+        "lib/net462/TaglibSharp.xml",
+        "lib/netstandard2.0/TagLibSharp.dll",
+        "lib/netstandard2.0/TagLibSharp.pdb",
+        "lib/netstandard2.0/TaglibSharp.xml",
+        "taglibsharp.2.3.0.nupkg.sha512",
+        "taglibsharp.nuspec"
+      ]
+    },
+    "YoutubeExplode/6.3.9": {
+      "sha512": "coN6vw39gDA3tL1KvZnOZ2fGAyHIQ69QcczrLtsVUdy7dhbp41y/y0lidhCppjyNt3EY7Ielss1fB3IzFqXSwg==",
+      "type": "package",
+      "path": "youtubeexplode/6.3.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "favicon.png",
+        "lib/net461/YoutubeExplode.dll",
+        "lib/net461/YoutubeExplode.xml",
+        "lib/net5.0/YoutubeExplode.dll",
+        "lib/net5.0/YoutubeExplode.xml",
+        "lib/netcoreapp3.1/YoutubeExplode.dll",
+        "lib/netcoreapp3.1/YoutubeExplode.xml",
+        "lib/netstandard2.0/YoutubeExplode.dll",
+        "lib/netstandard2.0/YoutubeExplode.xml",
+        "lib/netstandard2.1/YoutubeExplode.dll",
+        "lib/netstandard2.1/YoutubeExplode.xml",
+        "youtubeexplode.6.3.9.nupkg.sha512",
+        "youtubeexplode.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "Magick.NET-Q16-AnyCPU >= 13.5.0",
+      "NReco.VideoConverter >= 1.2.1",
+      "TagLibSharp >= 2.3.0",
+      "YoutubeExplode >= 6.3.9"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\baseh\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\baseh\\source\\repos\\YTDownloader\\YTDownloader\\YTDownloader.csproj",
+      "projectName": "YTDownloader",
+      "projectPath": "C:\\Users\\baseh\\source\\repos\\YTDownloader\\YTDownloader\\YTDownloader.csproj",
+      "packagesPath": "C:\\Users\\baseh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\baseh\\source\\repos\\YTDownloader\\YTDownloader\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\baseh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "dependencies": {
+          "Magick.NET-Q16-AnyCPU": {
+            "target": "Package",
+            "version": "[13.5.0, )"
+          },
+          "NReco.VideoConverter": {
+            "target": "Package",
+            "version": "[1.2.1, )"
+          },
+          "TagLibSharp": {
+            "target": "Package",
+            "version": "[2.3.0, )"
+          },
+          "YoutubeExplode": {
+            "target": "Package",
+            "version": "[6.3.9, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

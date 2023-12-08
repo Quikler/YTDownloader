@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "oKsfdHDV51lFLEZGrw9nCMnJJWHG1M4atWA5bC4kRuKih9UNMzIF+fL3qiwZZ7GC/s1FYkY2sTERNHX4zvUp1A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\baseh\\source\\repos\\YTDownloader\\YTDownloader\\YTDownloader.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\baseh\\.nuget\\packages\\anglesharp\\1.0.7\\anglesharp.1.0.7.nupkg.sha512",
+    "C:\\Users\\baseh\\.nuget\\packages\\magick.net-q16-anycpu\\13.5.0\\magick.net-q16-anycpu.13.5.0.nupkg.sha512",
+    "C:\\Users\\baseh\\.nuget\\packages\\magick.net.core\\13.5.0\\magick.net.core.13.5.0.nupkg.sha512",
+    "C:\\Users\\baseh\\.nuget\\packages\\nreco.videoconverter\\1.2.1\\nreco.videoconverter.1.2.1.nupkg.sha512",
+    "C:\\Users\\baseh\\.nuget\\packages\\system.text.encoding.codepages\\7.0.0\\system.text.encoding.codepages.7.0.0.nupkg.sha512",
+    "C:\\Users\\baseh\\.nuget\\packages\\taglibsharp\\2.3.0\\taglibsharp.2.3.0.nupkg.sha512",
+    "C:\\Users\\baseh\\.nuget\\packages\\youtubeexplode\\6.3.9\\youtubeexplode.6.3.9.nupkg.sha512"
+  ],
+  "logs": []
+}
