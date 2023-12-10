@@ -10,13 +10,15 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("YTDownloader")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Roman Binyukov | Quikler")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © 2023 Roman Binyukov | Quikler")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("YTDownloader")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YTDownloader")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/Quikler/YTDownloader")]
 
 // Создано классом WriteCodeFragment MSBuild.
 
