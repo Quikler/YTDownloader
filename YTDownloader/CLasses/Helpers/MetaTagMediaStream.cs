@@ -1,36 +1,64 @@
 ﻿using YoutubeExplode.Videos;
+using YTDownloader.CLasses.Models;
+using YTDownloader.CLasses.Models.Enums;
+using YTDownloader.Internal_Helpers;
 
 namespace YTDownloader.CLasses.Helpers
 {
-    public class MetaTagMediaHelper : IDisposable
+    public class MetaTagMediaStream : IDisposable
     {
         private readonly string _mediafilePath;
         private readonly TagLib.File _mediaFile;
+
+        private readonly DownloadedMediaInfo _downloadedMediaInfo;
+        private readonly YTType _mediaType;
+
         private readonly HttpClient _httpClient = new();
 
-        private const string LibraryName = "YTDownloader", LibraryCreator = "Quikler";
+        private const string
+            LibraryName = "YTDownloader",
+            LibraryCreator = "Quikler",
+            Copyright = $"Merged by © {LibraryName} | {LibraryCreator}";
 
-        public MetaTagMediaHelper(string mediaFilePath)
+        public MetaTagMediaStream(DownloadedMediaInfo downloadedMediaInfo)
         {
-            _mediafilePath = mediaFilePath;
+            _downloadedMediaInfo = downloadedMediaInfo;
+            _mediaType = _downloadedMediaInfo.MediaType;
+            _mediafilePath = _downloadedMediaInfo.FileInfo.FullName;
             _mediaFile = TagLib.File.Create(_mediafilePath);
         }
 
-        public void MergeVideoMatadata(Video video)
+        public void MergeMetadata()
+        {
+            MergeVideoMatadata(_downloadedMediaInfo.YoutubeVideo);
+            string? thumbnailUrl = _downloadedMediaInfo.Thumbnail?.Url;
+
+            if (thumbnailUrl is not null)
+                MergeThumbnailAsync(thumbnailUrl).Wait();
+        }
+
+        private void MergeVideoMatadata(Video video)
         {
             TagLib.Tag tag = _mediaFile.Tag;
 
-            tag.Publisher = video.Author.ChannelTitle;
-            tag.Comment = $"Merged by © {LibraryName} | {LibraryCreator}";
+            tag.Year = (uint)video.UploadDate.Year;
+            tag.Copyright = Copyright;
+            tag.Comment = Copyright;
             tag.Title = video.Title;
+            tag.Performers = new[] { video.Author.ChannelTitle };
+            tag.AlbumArtists = new[] { LibraryCreator };
             tag.DateTagged = DateTime.Now;
             tag.Album = LibraryName;
 
             _mediaFile.Save();
         }
 
-        public async Task MergeThumbnailAsync(string thumbnailUrl)
+        private async Task MergeThumbnailAsync(string thumbnailUrl)
         {
+            // If media type is video then return cuz video files already have thumbnail in this case
+            if (_mediaType != YTType.AudioOnly)
+                return;
+
             using HttpResponseMessage response = await _httpClient.GetAsync(thumbnailUrl);
             using HttpContent thumbnailContent = response.Content;
 
@@ -48,11 +76,10 @@ namespace YTDownloader.CLasses.Helpers
                 // Creating in current directory input and output files
                 string thumbnailInitialFilePath = Path.ChangeExtension(
                     _mediafilePath, $".{thumbnailParsedInitialExtension}");
+                string thumbnailJpegFilePath = Path.ChangeExtension(_mediafilePath, ".jpeg");
 
                 // Creating initial thumbnail file with initial extension
                 File.WriteAllBytes(thumbnailInitialFilePath, thumbnailAsByteArray);
-
-                string thumbnailJpegFilePath = Path.ChangeExtension(_mediafilePath, ".jpeg");
 
                 ConvertMediaHelper.ConvertImage(thumbnailInitialFilePath, thumbnailJpegFilePath, "jpeg", true);
                 thumbnailAsByteArray = File.ReadAllBytes(thumbnailJpegFilePath);

@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
 		<PackageId>YTDownloader</PackageId>
-		<Description>Library for downloading video/audio from Youtube with meta tags</Description>
+		<Description>Library for downloading video/audio from Youtube with specifying meta tags</Description>
 	    <Authors>Roman Binyukov | Quikler</Authors>
 	    <Copyright>Copyright © 2023 Roman Binyukov | Quikler</Copyright>
 	    <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -15,7 +15,7 @@
 			Youtube YoutubeDownloader YoutubeMediaDownloader
 			YotubeDownload YT YTDownloader YTMediaDownloader
 		</PackageTags>
-		<PackageVersion>1.0.1-beta</PackageVersion>
+		<PackageVersion>1.0.1</PackageVersion>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 

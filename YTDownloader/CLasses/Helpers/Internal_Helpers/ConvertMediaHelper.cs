@@ -1,4 +1,4 @@
-﻿namespace YTDownloader
+﻿namespace YTDownloader.Internal_Helpers
 {
     internal static class ConvertMediaHelper
     {
