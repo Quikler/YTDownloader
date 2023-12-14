@@ -1,9 +1,9 @@
 ﻿using YoutubeExplode.Videos;
+using YTDownloader.CLasses.Helpers.Internal_Helpers;
 using YTDownloader.CLasses.Models;
 using YTDownloader.CLasses.Models.Enums;
-using YTDownloader.Internal_Helpers;
 
-namespace YTDownloader.CLasses.Helpers
+namespace YTDownloader.CLasses
 {
     public class MetaTagMediaStream : IDisposable
     {
@@ -11,9 +11,9 @@ namespace YTDownloader.CLasses.Helpers
         private readonly TagLib.File _mediaFile;
 
         private readonly DownloadedMediaInfo _downloadedMediaInfo;
-        private readonly YTType _mediaType;
+        private readonly YTMediaType _mediaType;
 
-        private readonly HttpClient _httpClient = new();
+        private static readonly HttpClient _httpClient = new();
 
         private const string
             LibraryName = "YTDownloader",
@@ -30,14 +30,14 @@ namespace YTDownloader.CLasses.Helpers
 
         public void MergeMetadata()
         {
-            MergeVideoMatadata(_downloadedMediaInfo.YoutubeVideo);
+            MergeMediaMatadata(_downloadedMediaInfo.YoutubeVideo);
             string? thumbnailUrl = _downloadedMediaInfo.Thumbnail?.Url;
 
             if (thumbnailUrl is not null)
                 MergeThumbnailAsync(thumbnailUrl).Wait();
         }
 
-        private void MergeVideoMatadata(Video video)
+        private void MergeMediaMatadata(Video video)
         {
             TagLib.Tag tag = _mediaFile.Tag;
 
@@ -56,7 +56,7 @@ namespace YTDownloader.CLasses.Helpers
         private async Task MergeThumbnailAsync(string thumbnailUrl)
         {
             // If media type is video then return cuz video files already have thumbnail in this case
-            if (_mediaType != YTType.AudioOnly)
+            if (!YTMediaDownloader.IsAudioOnly(_mediaType))
                 return;
 
             using HttpResponseMessage response = await _httpClient.GetAsync(thumbnailUrl);

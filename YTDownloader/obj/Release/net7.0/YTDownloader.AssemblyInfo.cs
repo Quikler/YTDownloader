@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Roman Binyukov | Quikler")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © 2023 Roman Binyukov | Quikler")]
-[assembly: System.Reflection.AssemblyDescriptionAttribute("Library for downloading video/audio from Youtube with meta tags")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("Library for downloading video/audio from Youtube with specifying meta tags")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("YTDownloader")]
