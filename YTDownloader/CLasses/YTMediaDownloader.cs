@@ -24,30 +24,36 @@ namespace YTDownloader.CLasses
             string tempFilePath = PathHelper.CreateValidFilePath(
                 tempFolderPath, video.Title, mediaStreamInfo.Container.Name);
 
-            // Downloading youtube video to created file path
-            await _client.Videos.Streams.DownloadAsync(mediaStreamInfo, tempFilePath);
-            
-            YTMediaType yTType = YTMediaType.Muxed;
-            if (mediaStreamInfo is AudioOnlyStreamInfo)
+            try
             {
-                yTType = YTMediaType.AudioOnly;
+                // Downloading youtube video to created file path
+                await _client.Videos.Streams.DownloadAsync(mediaStreamInfo, tempFilePath);
 
-                // If audio only then convert to mp3
-                string mediaMp3FilePath = Path.ChangeExtension(tempFilePath, "mp3");
-                
-                // YoutubeExplode library represents all media from youtube as mp4/webm files
-                // so it's necessary to convert video to mp3 if YTType type specified as YTType.AudioOnly
-                ConvertMediaHelper.ConvertMedia(tempFilePath, mediaMp3FilePath, "mp3", true);
-                tempFilePath = mediaMp3FilePath;
+                YTMediaType yTType = YTMediaType.Muxed;
+                if (mediaStreamInfo is AudioOnlyStreamInfo)
+                {
+                    yTType = YTMediaType.AudioOnly;
+
+                    // If audio only then convert to mp3
+                    string mediaMp3FilePath = Path.ChangeExtension(tempFilePath, "mp3");
+
+                    // YoutubeExplode library represents all media from youtube as mp4/webm files
+                    // so it's necessary to convert video to mp3 if YTType type specified as YTType.AudioOnly
+                    ConvertMediaHelper.ConvertMedia(tempFilePath, mediaMp3FilePath, "mp3", true);
+                    tempFilePath = mediaMp3FilePath;
+                }
+                else if (mediaStreamInfo is VideoOnlyStreamInfo)
+                    yTType = YTMediaType.VideoOnly;
+
+                string destinationFilePath = PathHelper.ChangeDirectory(tempFilePath, destinationFolderPath);
+                File.Move(tempFilePath, destinationFilePath, true);
+
+                return new DownloadedMediaInfo(video, new FileInfo(destinationFilePath), yTType);
             }
-            else if (mediaStreamInfo is VideoOnlyStreamInfo)
-                yTType = YTMediaType.VideoOnly;
-
-            string destinationFilePath = PathHelper.ChangeDirectory(tempFilePath, destinationFolderPath);
-            File.Move(tempFilePath, destinationFilePath, true);
-            Directory.Delete(tempFolderPath, true);
-
-            return new DownloadedMediaInfo(video, new FileInfo(destinationFilePath), yTType);
+            finally
+            {
+                Directory.Delete(tempFolderPath, true);
+            }
         }
 
         internal static bool IsAudioOnly(YTMediaType type) => type == YTMediaType.AudioOnly;
