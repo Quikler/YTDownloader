@@ -13,7 +13,7 @@ namespace YTDownloader.CLasses
         private readonly DownloadedMediaInfo _downloadedMediaInfo;
         private readonly YTMediaType _mediaType;
 
-        private static readonly HttpClient _httpClient = new();
+        private readonly HttpClient _httpClient = new();
 
         private const string
             LibraryName = "YTDownloader",
@@ -28,13 +28,13 @@ namespace YTDownloader.CLasses
             _mediaFile = TagLib.File.Create(_mediafilePath);
         }
 
-        public void MergeMetadata()
+        public async Task MergeMetadataAsync()
         {
             MergeMediaMatadata(_downloadedMediaInfo.YoutubeVideo);
             string? thumbnailUrl = _downloadedMediaInfo.Thumbnail?.Url;
 
             if (thumbnailUrl is not null)
-                MergeThumbnailAsync(thumbnailUrl).Wait();
+                await MergeThumbnailAsync(thumbnailUrl);
         }
 
         private void MergeMediaMatadata(Video video)
@@ -81,7 +81,7 @@ namespace YTDownloader.CLasses
                 // Creating initial thumbnail file with initial extension
                 File.WriteAllBytes(thumbnailInitialFilePath, thumbnailAsByteArray);
 
-                ConvertMediaHelper.ConvertImage(thumbnailInitialFilePath, thumbnailJpegFilePath, "jpeg", true);
+                await ConvertMediaHelper.ConvertImageAsync(thumbnailInitialFilePath, thumbnailJpegFilePath, "jpeg", true);
                 thumbnailAsByteArray = File.ReadAllBytes(thumbnailJpegFilePath);
             }
 

@@ -24,6 +24,8 @@ namespace YTDownloader.CLasses
             string tempFilePath = PathHelper.CreateValidFilePath(
                 tempFolderPath, video.Title, mediaStreamInfo.Container.Name);
 
+            string? destinationFilePath = null;
+
             try
             {
                 // Downloading youtube video to created file path
@@ -39,16 +41,23 @@ namespace YTDownloader.CLasses
 
                     // YoutubeExplode library represents all media from youtube as mp4/webm files
                     // so it's necessary to convert video to mp3 if YTType type specified as YTType.AudioOnly
-                    ConvertMediaHelper.ConvertMedia(tempFilePath, mediaMp3FilePath, "mp3", true);
+                    await ConvertMediaHelper.ConvertMediaAsync(tempFilePath, mediaMp3FilePath, "mp3", true);
                     tempFilePath = mediaMp3FilePath;
                 }
                 else if (mediaStreamInfo is VideoOnlyStreamInfo)
                     yTType = YTMediaType.VideoOnly;
 
-                string destinationFilePath = PathHelper.ChangeDirectory(tempFilePath, destinationFolderPath);
+                destinationFilePath = PathHelper.ChangeDirectory(tempFilePath, destinationFolderPath);
                 File.Move(tempFilePath, destinationFilePath, true);
 
                 return new DownloadedMediaInfo(video, new FileInfo(destinationFilePath), yTType);
+            }
+            catch
+            {
+                if (destinationFilePath is not null)
+                    File.Delete(destinationFilePath);
+
+                throw;
             }
             finally
             {
