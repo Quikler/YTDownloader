@@ -15,7 +15,7 @@
 			Youtube YoutubeDownloader YoutubeMediaDownloader
 			YotubeDownload YT YTDownloader YTMediaDownloader
 		</PackageTags>
-		<PackageVersion>1.0.6</PackageVersion>
+		<PackageVersion>1.0.7</PackageVersion>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 

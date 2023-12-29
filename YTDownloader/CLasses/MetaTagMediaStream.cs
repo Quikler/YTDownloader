@@ -73,16 +73,26 @@ namespace YTDownloader.CLasses
                 thumbnailParsedInitialExtension != "jpg" &&
                 thumbnailParsedInitialExtension != "png")
             {
-                // Creating in current directory input and output files
-                string thumbnailInitialFilePath = Path.ChangeExtension(
-                    _mediafilePath, $".{thumbnailParsedInitialExtension}");
-                string thumbnailJpegFilePath = Path.ChangeExtension(_mediafilePath, ".jpeg");
+                string tempDirectory = PathHelper.CreateUniqueDirectoryName(Environment.CurrentDirectory, true);
 
-                // Creating initial thumbnail file with initial extension
-                File.WriteAllBytes(thumbnailInitialFilePath, thumbnailAsByteArray);
+                string tempThumbnailFilePath = PathHelper.CreateValidFilePath(
+                    tempDirectory, _downloadedMediaInfo.YoutubeVideo.Title, thumbnailParsedInitialExtension);
 
-                await ConvertMediaHelper.ConvertImageAsync(thumbnailInitialFilePath, thumbnailJpegFilePath, "jpeg", true);
-                thumbnailAsByteArray = File.ReadAllBytes(thumbnailJpegFilePath);
+                string thumbnailJpegFilePath = Path.ChangeExtension(tempThumbnailFilePath, ".jpeg");
+
+                try
+                {
+                    // Creating initial thumbnail file with initial extension
+                    File.WriteAllBytes(tempThumbnailFilePath, thumbnailAsByteArray);
+
+                    await ConvertMediaHelper.ConvertImageAsync(
+                        tempThumbnailFilePath, thumbnailJpegFilePath, "jpeg", true);
+                    thumbnailAsByteArray = File.ReadAllBytes(thumbnailJpegFilePath);
+                }
+                finally
+                {
+                    Directory.Delete(tempDirectory, true);
+                }
             }
 
             AddThumbnailToMedia(thumbnailAsByteArray);
