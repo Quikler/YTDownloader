@@ -10,3 +10,4 @@ C:\Users\baseh\source\repos\YTDownloader\YTDownloader\obj\Release\net7.0\YTDownl
 C:\Users\baseh\source\repos\YTDownloader\YTDownloader\obj\Release\net7.0\refint\YTDownloader.dll
 C:\Users\baseh\source\repos\YTDownloader\YTDownloader\obj\Release\net7.0\YTDownloader.pdb
 C:\Users\baseh\source\repos\YTDownloader\YTDownloader\obj\Release\net7.0\ref\YTDownloader.dll
+C:\Users\baseh\source\repos\YTDownloader\YTDownloader\obj\Release\net7.0\YTDownloader.sourcelink.json

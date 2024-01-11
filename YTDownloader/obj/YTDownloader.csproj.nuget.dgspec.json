@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\baseh\\source\\repos\\YTDownloader\\YTDownloader\\YTDownloader.csproj": {
-      "version": "1.0.7",
+      "version": "1.0.8",
       "restore": {
         "projectUniqueName": "C:\\Users\\baseh\\source\\repos\\YTDownloader\\YTDownloader\\YTDownloader.csproj",
         "projectName": "YTDownloader",
@@ -44,18 +44,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "Magick.NET-Q16-AnyCPU": {
-              "target": "Package",
-              "version": "[13.5.0, )"
-            },
-            "NReco.VideoConverter": {
-              "target": "Package",
-              "version": "[1.2.1, )"
-            },
-            "TagLibSharp": {
-              "target": "Package",
-              "version": "[2.3.0, )"
-            },
             "YoutubeExplode": {
               "target": "Package",
               "version": "[6.3.9, )"
@@ -77,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

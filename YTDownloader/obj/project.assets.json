@@ -18,85 +18,6 @@
           }
         }
       },
-      "Magick.NET-Q16-AnyCPU/13.5.0": {
-        "type": "package",
-        "dependencies": {
-          "Magick.NET.Core": "13.5.0"
-        },
-        "compile": {
-          "lib/netstandard21/Magick.NET-Q16-AnyCPU.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard21/Magick.NET-Q16-AnyCPU.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "build/netstandard20/Magick.NET-Q16-AnyCPU.targets": {}
-        },
-        "runtimeTargets": {
-          "runtimes/linux-arm64/native/Magick.Native-Q16-arm64.dll.so": {
-            "assetType": "native",
-            "rid": "linux-arm64"
-          },
-          "runtimes/linux-musl-x64/native/Magick.Native-Q16-x64.dll.so": {
-            "assetType": "native",
-            "rid": "linux-musl-x64"
-          },
-          "runtimes/linux-x64/native/Magick.Native-Q16-x64.dll.so": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          },
-          "runtimes/osx-arm64/native/Magick.Native-Q16-arm64.dll.dylib": {
-            "assetType": "native",
-            "rid": "osx-arm64"
-          },
-          "runtimes/osx-x64/native/Magick.Native-Q16-x64.dll.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/win-arm64/native/Magick.Native-Q16-arm64.dll": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-x64/native/Magick.Native-Q16-x64.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/Magick.Native-Q16-x86.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          }
-        }
-      },
-      "Magick.NET.Core/13.5.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard21/Magick.NET.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard21/Magick.NET.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "NReco.VideoConverter/1.2.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/NReco.VideoConverter.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/NReco.VideoConverter.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "System.Text.Encoding.CodePages/7.0.0": {
         "type": "package",
         "compile": {
@@ -116,19 +37,6 @@
           "runtimes/win/lib/net7.0/System.Text.Encoding.CodePages.dll": {
             "assetType": "runtime",
             "rid": "win"
-          }
-        }
-      },
-      "TagLibSharp/2.3.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/TagLibSharp.dll": {
-            "related": ".pdb"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/TagLibSharp.dll": {
-            "related": ".pdb"
           }
         }
       },
@@ -176,69 +84,6 @@
         "logo.png"
       ]
     },
-    "Magick.NET-Q16-AnyCPU/13.5.0": {
-      "sha512": "Kl3uDaaQkK9LVM9CUexnerlTOGFxA0CQHDU9be960W2VZVD45KtE5Yvtq3Mg0rUq7LlwXGCNr1FxEw/hhS2D/Q==",
-      "type": "package",
-      "path": "magick.net-q16-anycpu/13.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Magick.NET.icon.png",
-        "Notice.linux-musl.txt",
-        "Notice.linux.txt",
-        "Notice.osx.txt",
-        "Notice.win.txt",
-        "build/netstandard20/Magick.NET-Q16-AnyCPU.targets",
-        "docs/Readme.md",
-        "lib/netstandard20/Magick.NET-Q16-AnyCPU.dll",
-        "lib/netstandard20/Magick.NET-Q16-AnyCPU.xml",
-        "lib/netstandard21/Magick.NET-Q16-AnyCPU.dll",
-        "lib/netstandard21/Magick.NET-Q16-AnyCPU.xml",
-        "magick.net-q16-anycpu.13.5.0.nupkg.sha512",
-        "magick.net-q16-anycpu.nuspec",
-        "runtimes/linux-arm64/native/Magick.Native-Q16-arm64.dll.so",
-        "runtimes/linux-musl-x64/native/Magick.Native-Q16-x64.dll.so",
-        "runtimes/linux-x64/native/Magick.Native-Q16-x64.dll.so",
-        "runtimes/osx-arm64/native/Magick.Native-Q16-arm64.dll.dylib",
-        "runtimes/osx-x64/native/Magick.Native-Q16-x64.dll.dylib",
-        "runtimes/win-arm64/native/Magick.Native-Q16-arm64.dll",
-        "runtimes/win-x64/native/Magick.Native-Q16-x64.dll",
-        "runtimes/win-x86/native/Magick.Native-Q16-x86.dll"
-      ]
-    },
-    "Magick.NET.Core/13.5.0": {
-      "sha512": "/jKqfhbLvaVqxsV+DkOA5TjfrbO/Q3LdN3OL/xuewdC2EVBN4pTnAekAetn3CsbHOolfvc1xQLxY0MUN3nfwsg==",
-      "type": "package",
-      "path": "magick.net.core/13.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Copyright.txt",
-        "Magick.NET.icon.png",
-        "docs/Readme.md",
-        "lib/netstandard20/Magick.NET.Core.dll",
-        "lib/netstandard20/Magick.NET.Core.xml",
-        "lib/netstandard21/Magick.NET.Core.dll",
-        "lib/netstandard21/Magick.NET.Core.xml",
-        "magick.net.core.13.5.0.nupkg.sha512",
-        "magick.net.core.nuspec"
-      ]
-    },
-    "NReco.VideoConverter/1.2.1": {
-      "sha512": "d/V78hRW6Iqi9+lNrivCWL9qMiiJ8WCrwN1wpEvGq+3mE3uIy7VYhkgHrJBkUzx4RRQKEJ9UvCvVb+0ELIbGWg==",
-      "type": "package",
-      "path": "nreco.videoconverter/1.2.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/NReco.VideoConverter.dll",
-        "lib/net45/NReco.VideoConverter.xml",
-        "lib/netstandard2.0/NReco.VideoConverter.dll",
-        "lib/netstandard2.0/NReco.VideoConverter.xml",
-        "nreco.videoconverter.1.2.1.nupkg.sha512",
-        "nreco.videoconverter.nuspec"
-      ]
-    },
     "System.Text.Encoding.CodePages/7.0.0": {
       "sha512": "LSyCblMpvOe0N3E+8e0skHcrIhgV2huaNcjUUEa8hRtgEAm36aGkRoC8Jxlb6Ra6GSfF29ftduPNywin8XolzQ==",
       "type": "package",
@@ -276,23 +121,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "TagLibSharp/2.3.0": {
-      "sha512": "Qo4z6ZjnIfbR3Us1Za5M2vQ97OWZPmODvVmepxZ8XW0UIVLGdO2T63/N3b23kCcyiwuIe0TQvMEQG8wUCCD1mA==",
-      "type": "package",
-      "path": "taglibsharp/2.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net462/TagLibSharp.dll",
-        "lib/net462/TagLibSharp.pdb",
-        "lib/net462/TaglibSharp.xml",
-        "lib/netstandard2.0/TagLibSharp.dll",
-        "lib/netstandard2.0/TagLibSharp.pdb",
-        "lib/netstandard2.0/TaglibSharp.xml",
-        "taglibsharp.2.3.0.nupkg.sha512",
-        "taglibsharp.nuspec"
-      ]
-    },
     "YoutubeExplode/6.3.9": {
       "sha512": "coN6vw39gDA3tL1KvZnOZ2fGAyHIQ69QcczrLtsVUdy7dhbp41y/y0lidhCppjyNt3EY7Ielss1fB3IzFqXSwg==",
       "type": "package",
@@ -318,9 +146,6 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Magick.NET-Q16-AnyCPU >= 13.5.0",
-      "NReco.VideoConverter >= 1.2.1",
-      "TagLibSharp >= 2.3.0",
       "YoutubeExplode >= 6.3.9"
     ]
   },
@@ -329,7 +154,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.0.7",
+    "version": "1.0.8",
     "restore": {
       "projectUniqueName": "C:\\Users\\baseh\\source\\repos\\YTDownloader\\YTDownloader\\YTDownloader.csproj",
       "projectName": "YTDownloader",
@@ -368,18 +193,6 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
-          "Magick.NET-Q16-AnyCPU": {
-            "target": "Package",
-            "version": "[13.5.0, )"
-          },
-          "NReco.VideoConverter": {
-            "target": "Package",
-            "version": "[1.2.1, )"
-          },
-          "TagLibSharp": {
-            "target": "Package",
-            "version": "[2.3.0, )"
-          },
           "YoutubeExplode": {
             "target": "Package",
             "version": "[6.3.9, )"
@@ -401,7 +214,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

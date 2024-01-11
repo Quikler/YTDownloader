@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © 2023 Roman Binyukov | Quikler")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Library for downloading video/audio from Youtube with specifying meta tags")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+523c965fed6ea530343450b12f72aa1d725ec820")]
 [assembly: System.Reflection.AssemblyProductAttribute("YTDownloader")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YTDownloader")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

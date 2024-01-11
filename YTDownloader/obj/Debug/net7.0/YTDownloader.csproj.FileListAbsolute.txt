@@ -6,6 +6,7 @@ C:\Users\baseh\source\repos\YTDownloader\YTDownloader\obj\Debug\net7.0\YTDownloa
 C:\Users\baseh\source\repos\YTDownloader\YTDownloader\obj\Debug\net7.0\YTDownloader.AssemblyInfoInputs.cache
 C:\Users\baseh\source\repos\YTDownloader\YTDownloader\obj\Debug\net7.0\YTDownloader.AssemblyInfo.cs
 C:\Users\baseh\source\repos\YTDownloader\YTDownloader\obj\Debug\net7.0\YTDownloader.csproj.CoreCompileInputs.cache
+C:\Users\baseh\source\repos\YTDownloader\YTDownloader\obj\Debug\net7.0\YTDownloader.sourcelink.json
 C:\Users\baseh\source\repos\YTDownloader\YTDownloader\obj\Debug\net7.0\YTDownloader.dll
 C:\Users\baseh\source\repos\YTDownloader\YTDownloader\obj\Debug\net7.0\refint\YTDownloader.dll
 C:\Users\baseh\source\repos\YTDownloader\YTDownloader\obj\Debug\net7.0\YTDownloader.pdb
