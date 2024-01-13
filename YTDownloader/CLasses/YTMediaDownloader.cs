@@ -30,7 +30,7 @@ namespace YTDownloader.CLasses
                 stream.Seek(0, SeekOrigin.Begin);
             }
 
-            return new DownloadedMediaStream(mediaInfo.YoutubeVideo, stream, mediaInfo.MediaType);
+            return new DownloadedMediaStream(mediaInfo.YoutubeVideo, stream, mediaInfo.MediaType, mediaInfo.Thumbnail);
         }
 
         public Task<DownloadedMediaInfo> DownloadAsync(string url, string destinationFolderPath,

@@ -9,44 +9,7 @@ namespace YTDownloader.CLasses.Helpers
 {
     internal static class FileCreator
     {
-        /*public static async Task CreateThumbnailFileAsync(
-            string thumbnailUrl, string destinationFilePath, HttpClient httpClient)
-        {
-            using HttpResponseMessage response = await httpClient.GetAsync(thumbnailUrl);
-            using HttpContent thumbnailContent = response.Content;
-
-            byte[] thumbnailAsByteArray = await thumbnailContent.ReadAsByteArrayAsync();
-
-            // Thumbnail mime type. It might be webp, jpg, png etc
-            string thumbnailMimeType = thumbnailContent.Headers.ContentType!.MediaType!;
-            string thumbnailParsedInitialExtension = thumbnailMimeType[(thumbnailMimeType.IndexOf('/') + 1)..];
-
-            // Converting img from unsupported front cover format (like webp) to supported
-            if (thumbnailParsedInitialExtension != "jpeg" &&
-                thumbnailParsedInitialExtension != "jpg" &&
-                thumbnailParsedInitialExtension != "png")
-            {
-                string tempThumbnailFilePath = Path.GetTempFileName();
-                string thumbnailJpegFilePath = Path.ChangeExtension(tempThumbnailFilePath, ".jpeg");
-
-                try
-                {
-                    // Creating initial thumbnail file with initial extension
-                    File.WriteAllBytes(tempThumbnailFilePath, thumbnailAsByteArray);
-
-                    await FFmpegExecutor.ConvertImageAsync(tempThumbnailFilePath, thumbnailJpegFilePath);
-                    thumbnailAsByteArray = File.ReadAllBytes(thumbnailJpegFilePath);
-                }
-                finally
-                {
-                    File.Delete(tempThumbnailFilePath);
-                    File.Delete(thumbnailJpegFilePath);
-                }
-            }
-            File.WriteAllBytes(destinationFilePath, thumbnailAsByteArray);
-        }*/
-
-        public static async Task CreateThumbnailFileAsync(
+        public static async Task<byte[]> CreateThumbnailFileAsync(
             string thumbnailUrl, string destinationFilePath, HttpClient httpClient)
         {
             using HttpResponseMessage response = await httpClient.GetAsync(thumbnailUrl);
@@ -55,6 +18,7 @@ namespace YTDownloader.CLasses.Helpers
             byte[] thumbnailAsByteArray = await thumbnailContent.ReadAsByteArrayAsync();
 
             File.WriteAllBytes(destinationFilePath, thumbnailAsByteArray);
+            return thumbnailAsByteArray;
         }
 
         public static async Task<DownloadedMediaInfo> CreateVideoAsync(YoutubeClient ytClient,
@@ -76,7 +40,7 @@ namespace YTDownloader.CLasses.Helpers
                 await FFmpegExecutor.MergeVideoMetadataAsync(tempFile, destinationFilePath,
                     video.Author.ChannelTitle, video.Title, video.UploadDate.Year);
 
-                return new DownloadedMediaInfo(video, new(destinationFilePath), yTType);
+                return new DownloadedMediaInfo(video, new(destinationFilePath), yTType, null);
             }
             finally
             {
@@ -96,8 +60,10 @@ namespace YTDownloader.CLasses.Helpers
                 // download initial media to tmp
                 await ytClient.Videos.Streams.DownloadAsync(mediaStreamInfo, tempFilePath);
 
+                string thumbnailUrl = video.Thumbnails.GetWithHighestResolution().Url;
                 // create valid front cover for audio
-                await CreateThumbnailFileAsync(video.Thumbnails.GetWithHighestResolution().Url, coverFilePath, httpClient);
+                byte[] thumbnailBytes = await CreateThumbnailFileAsync(
+                    video.Thumbnails.GetWithHighestResolution().Url, coverFilePath, httpClient);
 
                 string destinationFilePath = PathHelper.CreateValidFilePath(
                     destinationFolder ?? Path.GetTempPath(), video.Title, "mp3");
@@ -106,7 +72,8 @@ namespace YTDownloader.CLasses.Helpers
                 await FFmpegExecutor.ConvertVideoToAudioAndMergeMetadataAsync(tempFilePath, destinationFilePath,
                     coverFilePath, video.Author.ChannelTitle, video.Title, video.UploadDate.Year);
 
-                return new DownloadedMediaInfo(video, new FileInfo(destinationFilePath), YTMediaType.AudioOnly);
+                return new DownloadedMediaInfo(video, new FileInfo(destinationFilePath),
+                    YTMediaType.AudioOnly, new(thumbnailBytes, thumbnailUrl));
             }
             finally
             {
