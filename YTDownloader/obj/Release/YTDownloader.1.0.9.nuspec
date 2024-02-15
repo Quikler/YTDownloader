@@ -12,7 +12,7 @@
     <copyright>Copyright © 2023 Roman Binyukov | Quikler</copyright>
     <tags>Youtube YoutubeDownloader YoutubeMediaDownloader
 			YotubeDownload YT YTDownloader YTMediaDownloader</tags>
-    <repository type="git" url="https://github.com/Quikler/YTDownloader" commit="e34a25c131fa50b60ea300de2121d23f63028bdf" />
+    <repository type="git" url="https://github.com/Quikler/YTDownloader" commit="d1a49c397a9c3e75e8c542f691d1b14f5cb45b1f" />
     <dependencies>
       <group targetFramework="net7.0">
         <dependency id="YoutubeExplode" version="6.3.9" exclude="Build,Analyzers" />

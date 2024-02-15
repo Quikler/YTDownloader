@@ -9,9 +9,9 @@ namespace YTDownloader.CLasses.Models
         public Video YoutubeVideo { get; }
         public YTMediaType MediaType { get; }
         public FileInfo FileInfo { get; }
-        public YTThumbnail? Thumbnail { get; }
+        public YTThumbnail Thumbnail { get; }
 
-        internal DownloadedMediaInfo(Video video, FileInfo fileInfo, YTMediaType mediaType, YTThumbnail? thumbnail)
+        internal DownloadedMediaInfo(Video video, FileInfo fileInfo, YTMediaType mediaType, YTThumbnail thumbnail)
         {
             YoutubeVideo = video;
             MediaType = mediaType;

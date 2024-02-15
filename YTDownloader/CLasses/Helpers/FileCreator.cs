@@ -9,13 +9,19 @@ namespace YTDownloader.CLasses.Helpers
 {
     internal static class FileCreator
     {
-        public static async Task<byte[]> CreateThumbnailFileAsync(
-            string thumbnailUrl, string destinationFilePath, HttpClient httpClient)
+        private static async Task<byte[]> GetThumbnailBytesAsync(string thumbnailUrl)
         {
-            using HttpResponseMessage response = await httpClient.GetAsync(thumbnailUrl);
+            using HttpClient hc = new();
+            using HttpResponseMessage response = await hc.GetAsync(thumbnailUrl);
             using HttpContent thumbnailContent = response.Content;
 
-            byte[] thumbnailAsByteArray = await thumbnailContent.ReadAsByteArrayAsync();
+            return await thumbnailContent.ReadAsByteArrayAsync();
+        }
+
+        public static async Task<byte[]> CreateThumbnailFileAsync(
+            string thumbnailUrl, string destinationFilePath)
+        {
+            byte[] thumbnailAsByteArray = await GetThumbnailBytesAsync(thumbnailUrl);
 
             File.WriteAllBytes(destinationFilePath, thumbnailAsByteArray);
             return thumbnailAsByteArray;
@@ -40,7 +46,10 @@ namespace YTDownloader.CLasses.Helpers
                 await FFmpegExecutor.MergeVideoMetadataAsync(tempFile, destinationFilePath,
                     video.Author.ChannelTitle, video.Title, video.UploadDate.Year);
 
-                return new DownloadedMediaInfo(video, new(destinationFilePath), yTType, null);
+                string thumbnailUrl = video.Thumbnails.GetWithHighestResolution().Url;
+                byte[] thumbnailBytes = await GetThumbnailBytesAsync(thumbnailUrl);
+
+                return new DownloadedMediaInfo(video, new(destinationFilePath), yTType, new(thumbnailBytes, thumbnailUrl));
             }
             finally
             {
@@ -48,9 +57,8 @@ namespace YTDownloader.CLasses.Helpers
             }
         }
 
-        public static async Task<DownloadedMediaInfo> CreateAudioAsync(
-            YoutubeClient ytClient, IStreamInfo mediaStreamInfo, 
-            HttpClient httpClient, Video video, string? destinationFolder)
+        public static async Task<DownloadedMediaInfo> CreateAudioAsync(YoutubeClient ytClient, 
+            IStreamInfo mediaStreamInfo, Video video, string? destinationFolder)
         {
             string tempFilePath = Path.GetTempFileName();
             string coverFilePath = Path.GetTempFileName();
@@ -61,9 +69,10 @@ namespace YTDownloader.CLasses.Helpers
                 await ytClient.Videos.Streams.DownloadAsync(mediaStreamInfo, tempFilePath);
 
                 string thumbnailUrl = video.Thumbnails.GetWithHighestResolution().Url;
+
                 // create valid front cover for audio
                 byte[] thumbnailBytes = await CreateThumbnailFileAsync(
-                    video.Thumbnails.GetWithHighestResolution().Url, coverFilePath, httpClient);
+                    video.Thumbnails.GetWithHighestResolution().Url, coverFilePath);
 
                 string destinationFilePath = PathHelper.CreateValidFilePath(
                     destinationFolder ?? Path.GetTempPath(), video.Title, "mp3");
