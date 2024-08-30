@@ -7,7 +7,7 @@ namespace YTDownloader.CLasses.Helpers
     {
         private const string FFMPEG_EXE_FILE = "ffmpeg.exe";
         private const string IMAGE_CONVERT_FORMAT = "-y -i \"{0}\" \"{1}\"";
-        private const string VIDEO_TO_AUDIO_CONVERT_FORMAT = "-y -i \"{0}\" -q:a 0 -map a \"{1}\"";
+        private const string VIDEO_TO_AUDIO_CONVERT_FORMAT = "-hide_banner -y -i \"{0}\" -q:a 0 -map a \"{1}\"";
 
         private const string DEFAULT_METADATA_FORMAT =
             "-metadata artist=\"{0}\"" +
@@ -18,10 +18,10 @@ namespace YTDownloader.CLasses.Helpers
             " -metadata comment=\"Merged by © YTDownloader | Quikler\"" +
             " -metadata copyright=\"Merged by © YTDownloader | Quikler\"";
 
-        private const string VIDEO_METADATA_FORMAT = "-y -i \"{0}\" -c copy {1} \"{2}\"";
+        private const string VIDEO_METADATA_FORMAT = "-hide_banner -y -i \"{0}\" -c copy {1} \"{2}\"";
 
         private const string VIDEO_TO_AUDIO_METADATA_FORMAT =
-            "-y -i \"{0}\" -i \"{1}\"" +
+            "-hide_banner -y -i \"{0}\" -i \"{1}\"" +
             " -map 0:a -c:a libmp3lame -id3v2_version 3 {2}" +
             " -map 1 -metadata:s:v comment=\"Cover (front)\" \"{3}\"";
 

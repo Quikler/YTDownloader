@@ -150,23 +150,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\baseh\\.nuget\\packages\\": {},
+    "C:\\Users\\romuc\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.1.1",
+    "version": "1.1.23",
     "restore": {
-      "projectUniqueName": "C:\\Users\\baseh\\source\\repos\\YTDownloader\\YTDownloader\\YTDownloader.csproj",
+      "projectUniqueName": "C:\\Users\\romuc\\source\\repos\\YTDownloader\\YTDownloader\\YTDownloader.csproj",
       "projectName": "YTDownloader",
-      "projectPath": "C:\\Users\\baseh\\source\\repos\\YTDownloader\\YTDownloader\\YTDownloader.csproj",
-      "packagesPath": "C:\\Users\\baseh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\baseh\\source\\repos\\YTDownloader\\YTDownloader\\obj\\",
+      "projectPath": "C:\\Users\\romuc\\source\\repos\\YTDownloader\\YTDownloader\\YTDownloader.csproj",
+      "packagesPath": "C:\\Users\\romuc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\romuc\\source\\repos\\YTDownloader\\YTDownloader\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\baseh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\romuc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -175,6 +175,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -187,6 +188,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -209,12 +215,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.19, 7.0.19]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.19, 7.0.19]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.19, 7.0.19]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,8 +1,0 @@
-<Project>
-	<ItemGroup>
-		<FFmpegFiles Include="$(MSBuildThisFileDirectory)\..\contentFiles\any\ffmpeg.exe" />
-	</ItemGroup>
-	<Target Name="CopyFiles" BeforeTargets="Build">
-		<Copy SourceFiles="@(FFmpegFiles)" DestinationFolder="$(TargetDir)" />
-	</Target>
-</Project>

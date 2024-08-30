@@ -15,20 +15,13 @@
 			Youtube YoutubeDownloader YoutubeMediaDownloader
 			YotubeDownload YT YTDownloader YTMediaDownloader
 		</PackageTags>
-		<PackageVersion>1.1.1</PackageVersion>
+		<PackageVersion>1.1.23</PackageVersion>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="YoutubeExplode" Version="6.3.9" />
     </ItemGroup>
-
-	<ItemGroup Label="FilesToCopy">
-		<Content Include="YTDownloader.targets" PackagePath="build/YTDownloader.targets" />
-		<Content Include="any\ffmpeg.exe" Pack="true" PackagePath="contentFiles\any">
-			<PackageCopyToOutput>true</PackageCopyToOutput>
-		</Content>
-	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="README.md">
@@ -38,7 +31,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="any\" />
+	  <None Update="ffmpeg.exe">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>

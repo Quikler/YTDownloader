@@ -12,7 +12,7 @@
     <copyright>Copyright © 2023 Roman Binyukov | Quikler</copyright>
     <tags>Youtube YoutubeDownloader YoutubeMediaDownloader
 			YotubeDownload YT YTDownloader YTMediaDownloader</tags>
-    <repository type="git" url="https://github.com/Quikler/YTDownloader" commit="d1a49c397a9c3e75e8c542f691d1b14f5cb45b1f" />
+    <repository type="git" url="https://github.com/Quikler/YTDownloader" commit="469a62a5cc16645673074e026062d113c5594a44" />
     <dependencies>
       <group targetFramework="net7.0">
         <dependency id="YoutubeExplode" version="6.3.9" exclude="Build,Analyzers" />
@@ -23,9 +23,9 @@
     </contentFiles>
   </metadata>
   <files>
-    <file src="C:\Users\baseh\source\repos\YTDownloader\YTDownloader\bin\Release\net7.0\YTDownloader.dll" target="lib\net7.0\YTDownloader.dll" />
-    <file src="C:\Users\baseh\source\repos\YTDownloader\YTDownloader\YTDownloader.targets" target="build\YTDownloader.targets" />
-    <file src="C:\Users\baseh\source\repos\YTDownloader\YTDownloader\any\ffmpeg.exe" target="contentFiles\any\ffmpeg.exe" />
-    <file src="C:\Users\baseh\source\repos\YTDownloader\YTDownloader\README.md" target="\README.md" />
+    <file src="C:\Users\romuc\source\repos\YTDownloader\YTDownloader\bin\Release\net7.0\YTDownloader.dll" target="lib\net7.0\YTDownloader.dll" />
+    <file src="C:\Users\romuc\source\repos\YTDownloader\YTDownloader\YTDownloader.targets" target="build\YTDownloader.targets" />
+    <file src="C:\Users\romuc\source\repos\YTDownloader\YTDownloader\any\ffmpeg.exe" target="contentFiles\any\ffmpeg.exe" />
+    <file src="C:\Users\romuc\source\repos\YTDownloader\YTDownloader\README.md" target="\README.md" />
   </files>
 </package>

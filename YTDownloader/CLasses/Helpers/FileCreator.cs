@@ -40,11 +40,14 @@ namespace YTDownloader.CLasses.Helpers
             {
                 await ytClient.Videos.Streams.DownloadAsync(mediaStreamInfo, tempFile);
 
+                string author = PathHelper.CreateValidFileName(video.Author.ChannelTitle);
+                string title = PathHelper.CreateValidFileName(video.Title);
+
                 string destinationFilePath = PathHelper.CreateValidFilePath(
-                    destinationFolder ?? Path.GetTempPath(), video.Title, "mp4");
+                    destinationFolder ?? Path.GetTempPath(), title, "mp4");
 
                 await FFmpegExecutor.MergeVideoMetadataAsync(tempFile, destinationFilePath,
-                    video.Author.ChannelTitle, video.Title, video.UploadDate.Year);
+                    author, title, video.UploadDate.Year);
 
                 string thumbnailUrl = video.Thumbnails.GetWithHighestResolution().Url;
                 byte[] thumbnailBytes = await GetThumbnailBytesAsync(thumbnailUrl);
@@ -74,12 +77,15 @@ namespace YTDownloader.CLasses.Helpers
                 byte[] thumbnailBytes = await CreateThumbnailFileAsync(
                     video.Thumbnails.GetWithHighestResolution().Url, coverFilePath);
 
+                string author = PathHelper.CreateValidFileName(video.Author.ChannelTitle);
+                string title = PathHelper.CreateValidFileName(video.Title);
+
                 string destinationFilePath = PathHelper.CreateValidFilePath(
-                    destinationFolder ?? Path.GetTempPath(), video.Title, "mp3");
+                    destinationFolder ?? Path.GetTempPath(), title, "mp3");
 
                 // convert to audio and merge metadata with cover
                 await FFmpegExecutor.ConvertVideoToAudioAndMergeMetadataAsync(tempFilePath, destinationFilePath,
-                    coverFilePath, video.Author.ChannelTitle, video.Title, video.UploadDate.Year);
+                    coverFilePath, author, title, video.UploadDate.Year);
 
                 return new DownloadedMediaInfo(video, new FileInfo(destinationFilePath),
                     YTMediaType.AudioOnly, new(thumbnailBytes, thumbnailUrl));
